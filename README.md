@@ -62,7 +62,10 @@ Fig. 4. Pantalla de bienvenida de USIBA.
 
 La segunda parte es la conexión con la base de datos que nos permitirá guardar los datos que procese del dispositivo biomédico y formar el historial de estas mismas, y la tercera parte es la interfaz compuesta por dos visores de señales que van a permitir que el usuario compruebe el comportamiento de las señales.
 En el software una vez llegada la señal al computador, este la capta utilizando las DLL (mcHID.dll y accesodatos.dll) encargadas de proveer los mecanismos necesarios para la utilización del protocolo USB y HID, una vez siendo interpretadas se procede a almacenarlos en la base de datos y posteriormente a graficarlos en los visores, los cuales les servirán al usuario para dar un mejor diagnostico a la hora de usar un equipo de biomédica.
+
+
 CARACTERÍSTICA DE LA INTERFAZ
+=====
  
 Fig. 5. Interfaz Grafica de USIBA.
 
@@ -77,7 +80,11 @@ Fig. 7. Pestaña MySQL, configuraciones de la conexión a la base de datos de US
 Configuración a la oscilación de la grafica
  
 Fig. 8. Pestaña de Oscilación de USIBA.
+
+
 DESCRIPCIÓN DE LOS MÓDULOS O CIRCUITOS ELÉCTRICOS
+=====
+
 Para la construcción de la placa elaboraremos una serie de módulos o circuitos eléctricos uno a uno que iremos interconectándolo.
 
 Micro-controlador  PIC18F4550
@@ -86,6 +93,7 @@ Este micro-controlador PIC18F4550, es ideal para trabajar a baja potencia (nanoW
 Fig. 9. Diagrama de pines del Micro-controlador PIC18F4550. [18]
 
 El encapsulado es más común para estos micro controlador es el DIP (Dual In line Pin) de 18 pines, este diseño utiliza un reloj de 4 MHz (cristal de cuarzo). Existen otros tipos de encapsulado, por ejemplo, el encapsulado tipo surfacemount (montaje superficial) es mucho mas pequeño.
+
 El circuito o modulo de alimentación.
  
 Fig. 10. Circuito de alimentación de la tarjeta electrónica
@@ -139,6 +147,7 @@ Esquema de sistema USIBA
 =====
  
 PROGRAMADOR
+====
  
 Fig. 15. Quemador PICSTART Plus desarrollado por Microchip.
 
