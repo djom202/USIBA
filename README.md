@@ -18,6 +18,7 @@ Keywords: Signals, biomedical, acquisition, micro-controller, USB, PIC18F.
 
 
 INTRODUCCION
+=====
 
 En el pasado el médico diagnosticaba las enfermedades mediante el método sintomático, esto se refiere a que basaba en una serie de pregunta hacia el  paciente, el medico infería la enfermedad y daba tratamiento para cada uno de los síntomas, desafortunadamente según cifras de la OMS contaba entre un  55% a un 60% de certeza en el diagnostico mediante el uso de tecnología, el medico puede hacer rigurosos estudios científico los cuales arrojan resultados reales e indican o muestran la existencias de una enfermedad determinada con el empleo de tecnología para diagnóstico. En la actualidad se han desarrollado millones de software muy eficientes en diferentes áreas de interés sin embargo la lucha que se mantiene no es en la eficiencia sino en la cantidad de recursos de hardware que se necesitan para la implementación o el costos de los mismo. La implementación del software actualmente se disputa en un software que utilice los recursos de hardware más baratos y sencillos pero que a su vez pueda competir con cualquier otro que realice lo mismo y tenga los mejores recursos de hardware. [1]
 El proporcionar a la sociedad la implementación ó desarrollo de nuevas tecnologías informáticas, para mejorar la comunicación, comprensión y manejo de la información médica hacia los pacientes, necesitara una óptima gestión administrativa de información que actualmente no es posible a pesar de los arduos avances en la tecnología, además que el desarrollo de nuevas tecnologías aplicadas en el ámbito de la salud requiere no sólo de una gran inversión de recursos económicos sino de su desarrollo y de la comunicación para los procesos clínicos y de investigación que van de la mano con una serie de protocolos y reglamentos que no siempre son fáciles de elaborar a pesar que la Biomédica facilita el manejo de una gran cantidad de datos y la ejecución de análisis computacional muy sofisticado, en la actualidad aun no se ha podido implementar de una forma sencilla. [7]
@@ -32,12 +33,14 @@ Las siglas USB corresponden a Universal Seria Bus, como su nombre lo indica, se 
 
 
 JUSTIFICACION
+=====
 
 El USB organiza el bus en una estructura de árbol descendente, con múltiples dispositivos conectados a un mismo bus, en la que unos elementos especiales, llamados hubs (Dispositivo que contiene uno o mas conectores o conexiones internas hacia otros dispositivos usb, el cual habilita la comunicación entre el host y  con diversos  dispositivos. Cada conector representa un puerto USB), enrutan las señales en su camino desde un dispositivo al host o viceversa. Primero está el controlador del bus, éste es la interfaz entre el bus USB y el bus del ordenador, de él cuelgan los dispositivos USB. A un hubs se puede conectar uno o más dispositivos, que a su vez pueden ser 
 otros hubs, así tenemos varios dispositivos conectados a un sólo controlador; como máximo alrededor de 126. [8]
 
 
 DESCRIPCIÓN DEL SISTEMA
+=====
  
 Fig. 3. Estructura de adquisición del sistema, (Esquema de interconexión USB). [9]
 
@@ -51,6 +54,7 @@ Una vez que se han obtenido las muestras deseadas por la aplicación en visual B
 
 
 DESARROLLO DEL SOFTWARE
+=====
 
 USIBA está basado en la programación orientada a objeto  implementada en el lenguaje de programación Visual Basic.Net, esta aplicación consta de tres partes fundamentales la primera son las librerías DLL (mcHID.dll, MySQl.data.dll y accesoDatos.dll) necesarias para conectar el aplicativo con la placa e interpretar el protocolo USB y HID, además de la conexión a la base de datos y el manejo o manipulación de los datos en la conexión USB, respectivamente. [2]
  
@@ -106,6 +110,7 @@ Este circuito esta constituido por un cristal y dos condensadores de 27 µF que 
 
 
 Modulo USB
+=====
  
 Fig. 11. Modulo USB.  Tiene un capacitor va a tierra por un puerto VUSB del micro-controlador.
 
@@ -131,6 +136,7 @@ Circuito completo
 
  
 Esquema de sistema USIBA
+=====
  
 PROGRAMADOR
  
