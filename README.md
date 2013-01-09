@@ -10,10 +10,13 @@ Facultad de Ingeniería de Sistemas
  
 Resumen—    En este artículo se describe el desarrollo de un sistema de cómputo para adquisición de señales biomédica y transmisión de la información a un equipo de cómputo por medio de los  protocolos USB (universal serial bus) y HID (Human Interface Device). Este sistema se desarrollo para que fuese sencillo de manipular y comprender para lograr su posterior manipulación, por lo que se baso en la programación orientada a objeto implementada en el lenguaje de programación visual basic.Net, por el cual se logro realizar la comunicación de forma ágil y eficaz a una tarjeta electrónica que contiene un micro-controlador PIC18F4550, que adquiere las señales análogas como la ECG (Electro Cardiograma), EEG (Electro Encefalograma) ó EMG de un dispositivo biomédico y posteriormente se puedan ser almacenadas y visualizadas por el aplicativo. Esta estructuración permite avanzar en los procesos de agilización de la obtención de los resultados de un paciente de forma ágil, eficaz y contundente.
 Palabras claves: Señales, biomédicas, adquisición, micro-controlador, USB, PIC18F.
+
 Abstract— This article describes the development of a computer system for biomedical signal acquisition and transmission of information to a computer equipment through the USB protocol (universal serial bus) and HID (Human Interface Device).
 This system was developed to be simple to manipulate and understand in order to achieve further handling, so it was based on object oriented programming implemented in basic.Net visual programming language, which was achieved by performing communication in a quickly and efficiently to an electronic card that contains a PIC18F4550 microcontroller, which acquires analog signals such as ECG (Electro Cardio), EEG (EEG) or EMG of a biomedical device and then can be stored and displayed by the application .
 This structure allows progress in streamlining the process of obtaining the results of a patient in a flexible, effective and forceful.
 Keywords: Signals, biomedical, acquisition, micro-controller, USB, PIC18F.
+
+
 INTRODUCCION
 
 En el pasado el médico diagnosticaba las enfermedades mediante el método sintomático, esto se refiere a que basaba en una serie de pregunta hacia el  paciente, el medico infería la enfermedad y daba tratamiento para cada uno de los síntomas, desafortunadamente según cifras de la OMS contaba entre un  55% a un 60% de certeza en el diagnostico mediante el uso de tecnología, el medico puede hacer rigurosos estudios científico los cuales arrojan resultados reales e indican o muestran la existencias de una enfermedad determinada con el empleo de tecnología para diagnóstico. En la actualidad se han desarrollado millones de software muy eficientes en diferentes áreas de interés sin embargo la lucha que se mantiene no es en la eficiencia sino en la cantidad de recursos de hardware que se necesitan para la implementación o el costos de los mismo. La implementación del software actualmente se disputa en un software que utilice los recursos de hardware más baratos y sencillos pero que a su vez pueda competir con cualquier otro que realice lo mismo y tenga los mejores recursos de hardware. [1]
@@ -21,17 +24,18 @@ El proporcionar a la sociedad la implementación ó desarrollo de nuevas tecnolo
 Por tales razones se pensó en la elaboración de un sistema de cómputo que permitiera la interconexión por medio de un protocolo de comunicación que fuese universal de un dispositivo biomédico a un centro de cómputo que a su vez tuviese un bajo costo de elaboración y que tuviera una licencia libre de costos por uso y/o implementación, por ello se desarrollo USIBA (USb Interface for  Biomedical Application), como ayuda a la fácil recolección de datos en la Biomedicina y como base para futuros proyectos que requieran este tipo de especificaciones.
 Este aplicativo capta la señal procedente de la placa que esta a su vez es obtenida del equipo de biomedicina y está basado en la programación orientada a objeto. Este se basa en un sistema de comunicación entre una serie de dispositivos electrónicos-informáticos que transmite al micro-controlador PIC18F4550, que permite gestionar mediante software la comunicación a través de interface USB 2.0.
 Con USIBA se realizo la comunicación entre los equipos de biomedicina y un centro de cómputo mediante la conexión USB, por la cual se podrá adquirir señales análogas mediante un dispositivo Biomédico como la ECG y transferir este tipo de datos a al equipo de cómputo para administrar esta información referente a los usuarios en el campo de la biomedicina.
-JUSTIFICACION
 
-.
- 
+
 DESCRIPCIÓN GENERAL DE LA TECNOLOGÍA USB
 
 Las siglas USB corresponden a Universal Seria Bus, como su nombre lo indica, se trata de un sistema de comunicación entre dispositivos electrónicos-informáticos que sólo transmite una unidad de información a la vez. El bus USB puede trabajar en dos modos, a baja velocidad (1,5 Mbps, para dispositivos como teclados, ratones, que no utilizaran grandes cantidades de información) y a alta velocidad (12 Mbps, para dispositivos como unidades de CDROM, altavoces y módems, etcétera). En cuanto a la comodidad, el bus USB se compacta en un cable de cuatro hilos, dos para datos (data+ y data-), dos para alimentación (+5v y tierra o Gnd). Esto supone un gran ahorro, tanto de espacio como de material. De acuerdo a estos parámetros, una de las principales ventajas que se obtiene del USB es precisamente su diseño. [7]
- 
-Fig. 1. Esquema de los puertos USB.
+
+
+JUSTIFICACION
+
 El USB organiza el bus en una estructura de árbol descendente, con múltiples dispositivos conectados a un mismo bus, en la que unos elementos especiales, llamados hubs (Dispositivo que contiene uno o mas conectores o conexiones internas hacia otros dispositivos usb, el cual habilita la comunicación entre el host y  con diversos  dispositivos. Cada conector representa un puerto USB), enrutan las señales en su camino desde un dispositivo al host o viceversa. Primero está el controlador del bus, éste es la interfaz entre el bus USB y el bus del ordenador, de él cuelgan los dispositivos USB. A un hubs se puede conectar uno o más dispositivos, que a su vez pueden ser 
 otros hubs, así tenemos varios dispositivos conectados a un sólo controlador; como máximo alrededor de 126. [8]
+
 
 DESCRIPCIÓN DEL SISTEMA
  
@@ -44,6 +48,7 @@ En la comunicación con el protocolo HID, existe 2 entidades: el host y el dispo
 El A/D (análoga/digital) es un dispositivo electrónico capaz de convertir una entrada analógica de voltaje en un valor binario. En la etapa donde se adquieren los datos, el micro-controlador esta compuesto  por un conversor A/D de 10 bits y un componente software, que realiza la rutina encargada  de dirigir el funcionamiento del conversor A/D. [13]
 Luego el dispositivo Biomédico conectado a la tarjeta electrónica procede a enviar los datos de forma análoga y son recibidos por los puertos AN0 y AN1, a medida que son recibidos por la tarjeta electrónica que realiza una conversión A/D, y los renvía a la interfaz USB por medio por modulo USB del micro-controlador PIC18F4550 usando los registros USB Buffer.
 Una vez que se han obtenido las muestras deseadas por la aplicación en visual Basic.Net de forma digital por la tarjeta electrónica, se llevar a cabo la grafica de los datos por medio de un objeto llamado chart (objeto estándar dentro de visual Basic.Net), además también los datos son registrados en la base de datos para su posterior análisis. [15]
+
 
 DESARROLLO DEL SOFTWARE
 
@@ -87,8 +92,6 @@ El circuito o modulo pulsador.
  
 Fig. 7. Circuito pulsador
 
-
-
 Fig. 8. Circuito reset
 Este circuito permite generar unas señales eléctricas correspondientes a 1 y 0 lógicos para ser ingresadas en las entradas del micro-controlador para que posteriormente se realicen cambios y/o visualizaciones por medio del puerto B del mismo.
 Circuito Reset del micro-controlador
@@ -102,15 +105,9 @@ Circuito resonante
 Este circuito esta constituido por un cristal y dos condensadores de 27 µF que van a tierra. El PIC trabaja a 4MHz y lo que se realiza es generar 48MHz para el funcionamiento del modulo USB.
 
 
-
-
-
-
-
 Modulo USB
  
 Fig. 11. Modulo USB.  Tiene un capacitor va a tierra por un puerto VUSB del micro-controlador.
-
 
 Este circuito lleva la información al PC a través de un buffer en forma digital, tiene un LED que indica si esta llegando la información al PC, una resistencia y va a tierra.
 
@@ -135,9 +132,7 @@ Circuito completo
  
 Esquema de sistema USIBA
  
- 
 PROGRAMADOR
-
  
 Fig. 15. Quemador PICSTART Plus desarrollado por Microchip.
 
